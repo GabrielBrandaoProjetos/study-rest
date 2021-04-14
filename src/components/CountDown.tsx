@@ -10,7 +10,8 @@ export function CountDown(){
         hasFinished, 
         isActive, 
         startCountdown, 
-        resetCountdown
+        resetCountdown,
+        isActiveRest
     } = useContext(CountDownContext)
 
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
@@ -38,14 +39,22 @@ export function CountDown(){
             ): (
                 <>
                 {isActive ? (
-                <Styled.CountdownButtonActive onClick={resetCountdown} type="button">
-                    Abandonar ciclo
-                </Styled.CountdownButtonActive>
-            ) : (
-                <Styled.CountdownButton onClick={startCountdown} type="button" >
-                    Iniciar ciclo
-                </Styled.CountdownButton>
-            )}
+                    <Styled.CountdownButtonActive onClick={resetCountdown} type="button">
+                        Abandonar ciclo
+                    </Styled.CountdownButtonActive>
+                ) : (
+                    <>
+                        {isActiveRest ? (
+                            <Styled.CountdownButtonActive onClick={resetCountdown} type="button">
+                                Abandonar descanso
+                            </Styled.CountdownButtonActive>
+                        ) : (
+                            <Styled.CountdownButton onClick={startCountdown} type="button" >
+                                Iniciar ciclo
+                            </Styled.CountdownButton>
+                        )}
+                    </>
+                )}
                 </>
             )}
         
