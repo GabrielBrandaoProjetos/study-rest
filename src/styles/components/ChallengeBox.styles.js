@@ -72,6 +72,11 @@ export const ChallengeActive = styled.div`
         transition: filter 0.2s;
     }
 
+    footer button.challengeFailedButton:disabled{
+        background: var(--red);
+        cursor: not-allowed;
+    }
+
     footer button.challengeFailedButton{
         background: var(--red);
     }

@@ -6,16 +6,16 @@ import * as Styled from '../styles/components/ChallengeBox.styles'
 
 export function ChallengeBox(){
     const {resetChallenge, activeChallenge, completedChallenge} = useContext(ChallengesContext)
-    const {resetCountdown} = useContext(CountDownContext)
+    const {resetCountdown, isActiveRest} = useContext(CountDownContext)
 
     function handleChallengeSucceeded(){
         completedChallenge()
-        resetCountdown()
+        !isActiveRest && resetCountdown()
     }
 
     function handleChallengeFailed(){
         resetChallenge()
-        resetCountdown()
+        !isActiveRest && resetCountdown()
     }
 
 
@@ -31,7 +31,12 @@ export function ChallengeBox(){
                         <p>{activeChallenge.description}</p>
                     </main>
                     <footer>
-                        <button type="button" className="challengeFailedButton" onClick={handleChallengeFailed}>Falhei</button>
+                        {isActiveRest ? (
+                            <button disabled type="button" className="challengeFailedButton">Falhei</button>
+                        ): (
+                            <button type="button" className="challengeFailedButton" onClick={handleChallengeFailed}>Falhei</button>
+                        )}
+                        
                         <button type="button" className="challengeSucceededButton" onClick={handleChallengeSucceeded}>Completei</button>
                     </footer>
 
