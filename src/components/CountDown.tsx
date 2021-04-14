@@ -4,9 +4,14 @@ import { CountDownContext } from '../contexts/CountDownContext'
 import * as Styled from '../styles/components/CountDown.styles.js'
 
 export function CountDown(){
-
-    
-    const {minutes, seconds, hasFinished, isActive, startCountdown, resetCountdown} = useContext(CountDownContext)
+    const {
+        minutes,
+        seconds, 
+        hasFinished, 
+        isActive, 
+        startCountdown, 
+        resetCountdown
+    } = useContext(CountDownContext)
 
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
     const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
