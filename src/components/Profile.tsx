@@ -27,6 +27,7 @@ export function Profile(){
             localStorage.setItem('imageProfile', JSON.stringify(evt.target.result))
         };
         reader.readAsDataURL(e)
+        setIsActive(false)
     }
 
     const toggleImageProfile = () => {
