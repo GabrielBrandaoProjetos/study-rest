@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { CgProfile } from 'react-icons/cg'
+import { MdEdit } from 'react-icons/md'
 
 export const ProfileContainer = styled.div`
     display: flex;
@@ -8,7 +9,6 @@ export const ProfileContainer = styled.div`
     > div{
         margin-left: 0;
         position: relative;
-        
 
         > img{
             width: 5rem;
@@ -68,12 +68,28 @@ export const ProfileContainer = styled.div`
         }
     }
 
-    input{
+    input#imageProfile{
         display: none;
     }
 
     div:last-child{
         margin-left: 1.5rem;
+
+        input{
+            width: 100%;
+            height: 2rem;
+
+            border-radius: 5px;
+            border: none;
+            padding-left: 10px;
+        }
+
+        span{
+            padding-left: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--text)
+        }
     }
 
     div strong{
@@ -95,5 +111,14 @@ export const ProfileContainer = styled.div`
 export const _CgProfile = styled(CgProfile)`
     width: 2rem;
     height: 2rem;
+    cursor: pointer;
+`
+
+export const _MdEdit = styled(MdEdit)`
+    width: 1rem;
+    height: 1rem;
+
+    margin-left: 10px;
+    font-size: 0;
     cursor: pointer;
 `

@@ -1,5 +1,8 @@
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
 import { useContext, useEffect, useState } from 'react'
 import { ChallengesContext } from '../contexts/ChallengesContext'
+
 
 import * as Styled from '../styles/components/Profile.styles.js'
 
@@ -7,10 +10,14 @@ export function Profile(){
     const {level} = useContext(ChallengesContext)
     const [imageProfile, setImageProfile] = useState(null)
     const [isActive, setIsActive] = useState(false)
+    const [name, setName] = useState<string>()
 
     useEffect(() => {
-        const storage = localStorage.getItem('imageProfile')
-        storage && setImageProfile(JSON.parse(storage))
+        const storageImage = localStorage.getItem('imageProfile')
+        const storageName = localStorage.getItem('name')
+        
+        storageImage && setImageProfile(JSON.parse(storageImage))
+        storageName && setName(storageName)
     }, [])
     
     function handleImageProfile(e: File){
@@ -21,12 +28,26 @@ export function Profile(){
         };
         reader.readAsDataURL(e)
     }
+
+    const toggleImageProfile = () => {
+        setIsActive(isActive ? false : true)
+    }
+
+    const removeImageProfile = () => {
+        localStorage.removeItem('imageProfile')
+        setImageProfile(null)
+    }
+
+    function handleUserName({name}){
+        setName(name)
+        localStorage.setItem("name", name)
+    }
     
     return(
         <Styled.ProfileContainer>
             {imageProfile ? (
                 <div>
-                    <img src={imageProfile} alt="Foto do perfil" onClick={() => setIsActive(isActive ? false : true)}/>
+                    <img src={imageProfile} alt="Foto do perfil" onClick={toggleImageProfile}/>
                     {isActive && (
                         <div className="boxEditImage">
                             <label htmlFor="imageProfile">Atualizar foto</label>
@@ -35,10 +56,7 @@ export function Profile(){
                                     onChange={(e) => {handleImageProfile(e.target.files[0])}}
                                 />
                             </form>
-                            <label onClick={() => {
-                                localStorage.removeItem('imageProfile')
-                                setImageProfile(null)
-                            }}>Excluir foto</label>
+                            <label onClick={removeImageProfile}>Excluir foto</label>
                         </div>
                     )}
                 </div>
@@ -54,7 +72,26 @@ export function Profile(){
                 </div>
             )}
             <div>
-                <strong>Gabriel Brandão</strong>
+                {!name ? (
+                    <Formik 
+                        initialValues={{name: ''}}
+                        validationSchema={Yup.object().shape({name: Yup.string().required()})}
+                        onSubmit={handleUserName}
+                    >
+                        {formik => (
+                            <Form>
+                            <Field id="name" name="name" type="search/submit" placeholder="Ex: Gabriel Brandão" />
+                                {formik.errors && <ErrorMessage component="span" name="name" />}
+                            </Form>
+                        )}
+                    </Formik>
+                ) : (
+                    <>
+                        <strong>{name}</strong>
+                        <Styled._MdEdit onClick={() => setName(null)}/>
+                    </>
+                )}
+                
                 <p>
                     <img src="icons/level.svg" alt="Level"/>
                     Level {level}
