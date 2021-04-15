@@ -1,6 +1,5 @@
 # Study and Rest
-A React.js app that applies the Pomodoro time management method.
-
+A React.js app developed during #NLW4 - [Rocketseat](https://rocketseat.com.br/) that applies the Pomodoro time management method. P.S. Modified app.
 ## Layout web
 
 ![Dark](https://github.com/GabrielBrandaoProjetos/study-rest/blob/main/public/assets/dark.PNG)
