@@ -8,6 +8,7 @@ export const ProfileContainer = styled.div`
 
     > div{
         margin-left: 0;
+        font-size: 0;
         position: relative;
 
         > img{
@@ -90,12 +91,12 @@ export const ProfileContainer = styled.div`
             font-weight: bold;
             color: var(--text)
         }
-    }
 
-    div strong{
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--title);
+        strong{
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--title);
+        }
     }
 
     div p{

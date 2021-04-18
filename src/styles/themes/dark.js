@@ -5,7 +5,7 @@ export default {
         primary: '#fff',
         secondary: '#D63AF9',
         
-        white: "#7b7979",
+        white: "#484a4f",
         background: "rgb(53 54 58);",
         grayLine: "#dcdde0",
         text: "#fff",

@@ -7,7 +7,7 @@ export const CountdownContainer = styled.div`
     font-weight: 600;
     color: var(--title);
 
-    div{
+    > div{
         flex: 1;
 
         display: flex;
@@ -23,14 +23,16 @@ export const CountdownContainer = styled.div`
 
     > div span{
         flex: 1;
+        width: 68.33px;
+        height: 163px;
     }
 
     > div span:first-child{
-        border-right: 1px solid #f0f1f3;
+        border-right: 1px solid var(--background);
     }
 
     > div span:last-child{
-        border-left: 1px solid #f0f1f3;
+        border-left: 1px solid var(--background);
     }
 
     > span{
