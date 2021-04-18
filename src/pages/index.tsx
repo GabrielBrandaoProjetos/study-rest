@@ -37,6 +37,7 @@ export default function Home(props: HomeProps) {
           <title>Inicio | move.it</title>
         </Head>
         <div>
+          <strong>Tema</strong>
           <Styled._Switch 
             onChange={toggleTheme}
             checked={title === 'dark'}

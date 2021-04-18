@@ -23,7 +23,7 @@ export const ChallengeActive = styled.div`
     flex-direction: column;
 
     header{
-        color: var(--blue);
+        color: var(--green);
         font-weight: 600;
         font-size: 1.25rem;
         padding: 0 2rem 1.5rem;

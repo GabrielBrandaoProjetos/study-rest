@@ -5,7 +5,7 @@ export default {
         primary: '#fff',
         secondary: '#D63AF9',
         
-        white: "#484a4f",
+        white: "#2e2f31",
         background: "rgb(53 54 58);",
         grayLine: "#dcdde0",
         text: "#fff",
@@ -14,8 +14,8 @@ export default {
         title: "#fff",
         red: "#e83f5b",
         green: "#4cd62b",
-        blue: "#10025a",
-        blueDark: "#080031",
+        blue: "#612998",
+        blueDark: "#3c096c",
         blueTwitter: "#2aa9e0",
     }
 }

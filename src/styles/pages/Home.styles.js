@@ -13,8 +13,13 @@ export const Container = styled.div`
 
     > div{
         display: flex;
+        align-items: center;
         justify-content: flex-end;
         margin-top: 0.5rem;
+
+        strong{
+            margin-right: 1rem;
+        }
     }
 
     section{
