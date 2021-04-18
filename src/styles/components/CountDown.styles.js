@@ -23,8 +23,6 @@ export const CountdownContainer = styled.div`
 
     > div span{
         flex: 1;
-        width: 68.33px;
-        height: 163px;
     }
 
     > div span:first-child{
