@@ -133,6 +133,11 @@ export const ProfileContainer = styled.div`
                 }
             }
         }
+
+        div.input{
+            width: 4rem;
+            height: 4rem;
+        }
     }
 `
 
