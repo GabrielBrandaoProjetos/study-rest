@@ -34,7 +34,7 @@ export default function Home(props: HomeProps) {
     >   
       <Styled.Container>
         <Head>
-          <title>Inicio | move.it</title>
+          <title>StudyRest</title>
         </Head>
         <div>
           <strong>Tema</strong>
