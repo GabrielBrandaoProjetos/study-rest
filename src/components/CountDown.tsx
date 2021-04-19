@@ -25,7 +25,7 @@ export function CountDown(){
     }
 
     return(
-        <>
+        <Styled.Container>
             <Styled.CountdownContainer>
                 <div>
                     <span>{minuteLeft}</span>
@@ -55,6 +55,6 @@ export function CountDown(){
                     )}
                 </>
             )}
-        </>
+        </Styled.Container>
     )
 }

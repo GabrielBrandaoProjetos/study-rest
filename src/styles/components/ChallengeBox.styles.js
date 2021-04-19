@@ -12,8 +12,13 @@ export const ChallengeBoxContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
 
     text-align: center;
+
+    @media(max-width: 400px){
+       
+    }
 `
 
 export const ChallengeActive = styled.div`
@@ -88,6 +93,32 @@ export const ChallengeActive = styled.div`
     footer button:hover{
         filter: brightness(0.8);
     }
+
+    @media (max-width: 400px) {
+        header{
+            font-size: 1.1rem;
+            padding: 0 2rem 0.5rem;
+        }
+        main img {
+            display: none;
+        }
+
+        main strong{
+            font-size: 1.5rem;
+            margin: 0.5rem 0 0.5rem;
+        }
+
+        main p{
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        footer button{
+            height: 2.5rem;
+        }
+    }
+
 `
 
 export const ChallengeNotActive = styled.div`
@@ -112,6 +143,24 @@ export const ChallengeNotActive = styled.div`
 
     p img{
         margin-bottom: 1rem;
+    }
+
+    @media (max-width: 400px) {
+        img{
+            width: 3rem;
+            height: 5rem;
+        }
+
+        strong{
+            font-size: 1.1rem;
+        }
+        p{
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+        p img{
+            margin-bottom: 0.5rem;
+        }
     }
 
 `

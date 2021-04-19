@@ -55,4 +55,8 @@ export const Container = styled.div`
         border: 2px solid;
         border-radius: 3px;
     }
+
+    @media (max-width: 400px) {
+        width: 90%;
+    }
 `

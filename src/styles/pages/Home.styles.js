@@ -30,6 +30,25 @@ export const Container = styled.div`
         gap: 6.25rem;
         align-content: center;
     }
+
+    @media (max-width: 400px) {
+        max-width: 100vw;
+
+        section{
+            max-width: 100vw;
+            height: 80vh;
+            gap: 1rem;
+
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+
+            div.challengeBox{
+                padding-bottom: 2rem;
+            }
+        }
+
+    }
 `
 
 export const _Switch = styled(Switch)`

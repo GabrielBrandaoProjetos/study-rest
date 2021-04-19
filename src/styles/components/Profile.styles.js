@@ -8,7 +8,6 @@ export const ProfileContainer = styled.div`
 
     > div{
         margin-left: 0;
-        font-size: 0;
         position: relative;
 
         > img{
@@ -106,6 +105,34 @@ export const ProfileContainer = styled.div`
 
     div p img{
         margin-right: 0.5rem;
+    }
+
+    @media (max-width: 400px) {
+        > div{ 
+            > img{
+                width: 4rem;
+                height: 4rem;
+            }
+
+            div.boxEditImage{
+                width: 6rem;
+                height: 4rem;
+
+                position: absolute;
+                left: -1rem;
+                bottom: -4.5rem;
+
+                label{
+                    font-size: 0.6rem;
+                    font-weight: 600;
+                    padding: 5px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    
+                }
+            }
+        }
     }
 `
 

@@ -1,4 +1,14 @@
 import styled from 'styled-components'
+export const Container = styled.div`
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: 400px){
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1rem;
+    }
+`
 
 export const CountdownContainer = styled.div`
     display: flex;
@@ -38,6 +48,17 @@ export const CountdownContainer = styled.div`
         margin: 0 0.5rem;
     }
 
+    @media (max-width: 400px) {
+        > div{
+            font-size: 4rem;
+        }
+
+        > span{
+            font-size: 2rem;
+            margin: 0 0.5rem;
+        }
+    }
+
 `
 
 export const CountdownButton = styled.button`
@@ -65,6 +86,13 @@ export const CountdownButton = styled.button`
     :not(:disabled):hover{
         background: var(--blue-dark);
     }
+
+    @media(max-width: 400px){
+        width: 100%;
+        height: 4rem;
+        margin-top: 0;
+        font-size: 1rem;
+    }
 `
 
 
@@ -91,5 +119,12 @@ export const CountdownButtonActive = styled.button`
     :hover{
         background: var(--red);
         color: var(--text-button);
+    }
+
+    @media(max-width: 400px){
+        width: 100%;
+        height: 4rem;
+        margin-top: 0;
+        font-size: 1rem;
     }
 `

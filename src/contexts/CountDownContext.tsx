@@ -25,7 +25,7 @@ export function CountDownProvider({children}: ChildrenProviderProps){
     const [timeRest, setTimeRest] = useState(5 * 60)
     const [isActive, setIsActive] = useState(false)
     const [isActiveRest, setIsActiveRest] = useState(false)
-    
+
     var minutes = 0
     var seconds = 0
 
